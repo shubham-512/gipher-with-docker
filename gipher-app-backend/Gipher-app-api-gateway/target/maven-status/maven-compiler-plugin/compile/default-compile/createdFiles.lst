@@ -1,0 +1,5 @@
+com\gipher\app\apigateway\config\GatewayConfig.class
+com\gipher\app\apigateway\config\RouterValidator.class
+com\gipher\app\apigateway\config\JwtUtil.class
+com\gipher\app\apigateway\GipherAppApiGatewayApplication.class
+com\gipher\app\apigateway\config\AuthenticationFilter.class

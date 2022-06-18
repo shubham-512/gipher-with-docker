@@ -1,0 +1,40 @@
+ spring:
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+          cors-configurations: 
+            '[/**]':
+              allowed-origins: "*"
+              allowed-methods: "*"
+              allowed-headers: "*"
+#              allow-credentials: true
+      routes:
+#        
+#      - id: auth-service
+#        uri:
+#          lb://AUTH-SERVICE
+#        predicates:
+#        - Path=/api/v1/auth/**
+#       
+#        
+#        
+      - id: external-api
+        uri: 
+          https://api.giphy.com
+        predicates :
+          - Path=/v1/gifs/**
+#          
+#          
+#      - id: gipher-app-wishlist-service
+#        uri:
+#          lb://GIPHER-APP-WISHLIST-SERVICE
+#        predicates:
+#        - Path=/api/v1/wishlist/**
+#        
+#        
+      
+      
+
+

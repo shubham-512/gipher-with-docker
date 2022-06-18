@@ -1,0 +1,9 @@
+com\gipher\wishlist\controller\WishlistController.class
+com\gipher\wishlist\errorhandler\GifAlreadyExistsByGivenUserException.class
+com\gipher\wishlist\repository\WishlistRepository.class
+com\gipher\wishlist\service\WishlistServiceImpl.class
+com\gipher\wishlist\model\Wishlist.class
+com\gipher\wishlist\errorhandler\ApiExceptionHandler.class
+com\gipher\wishlist\GipherAppWishlistServiceApplication.class
+com\gipher\wishlist\errorhandler\GifNotFoundForGivenUserException.class
+com\gipher\wishlist\service\WishlistService.class

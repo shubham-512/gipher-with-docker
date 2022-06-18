@@ -1,0 +1,9 @@
+D:\shubham project\stackroute\gipher-with-docker\gipher-app-backend\Gipher-app-wishlist-service\src\main\java\com\gipher\wishlist\errorhandler\GifAlreadyExistsByGivenUserException.java
+D:\shubham project\stackroute\gipher-with-docker\gipher-app-backend\Gipher-app-wishlist-service\src\main\java\com\gipher\wishlist\service\WishlistServiceImpl.java
+D:\shubham project\stackroute\gipher-with-docker\gipher-app-backend\Gipher-app-wishlist-service\src\main\java\com\gipher\wishlist\repository\WishlistRepository.java
+D:\shubham project\stackroute\gipher-with-docker\gipher-app-backend\Gipher-app-wishlist-service\src\main\java\com\gipher\wishlist\GipherAppWishlistServiceApplication.java
+D:\shubham project\stackroute\gipher-with-docker\gipher-app-backend\Gipher-app-wishlist-service\src\main\java\com\gipher\wishlist\controller\WishlistController.java
+D:\shubham project\stackroute\gipher-with-docker\gipher-app-backend\Gipher-app-wishlist-service\src\main\java\com\gipher\wishlist\model\Wishlist.java
+D:\shubham project\stackroute\gipher-with-docker\gipher-app-backend\Gipher-app-wishlist-service\src\main\java\com\gipher\wishlist\service\WishlistService.java
+D:\shubham project\stackroute\gipher-with-docker\gipher-app-backend\Gipher-app-wishlist-service\src\main\java\com\gipher\wishlist\errorhandler\GifNotFoundForGivenUserException.java
+D:\shubham project\stackroute\gipher-with-docker\gipher-app-backend\Gipher-app-wishlist-service\src\main\java\com\gipher\wishlist\errorhandler\ApiExceptionHandler.java
