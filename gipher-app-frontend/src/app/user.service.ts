@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Login } from './model/login.model';
 import { User } from './model/user.model';
-const URL = 'http://localhost:8888/api/v1/auth';
+const URL = 'http://34.125.128.88:8888/api/v1/auth';
 const httpOptions = {
   observe: 'response' as const,
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

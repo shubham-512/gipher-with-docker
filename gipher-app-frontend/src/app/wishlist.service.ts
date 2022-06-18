@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Wishlist } from './model/wishlist.model';
 
-const URL = 'http://localhost:8888/api/v1/wishlist';
+const URL = 'http://34.125.128.88:8888/api/v1/wishlist';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
