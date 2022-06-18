@@ -65,6 +65,11 @@ services:
        MONGO_DATABASE : wp_db
        MONGO_USER : admin
        MONGO_PASSWORD : admin123
+       MYSQL_HOST: mysql-server
+       MYSQL_DATABASE : wp_db
+       MYSQL_USER : root
+       MYSQL_PASSWORD : admin123
+       MYSQL_PORT : 3306
     networks: 
       - gipher-app-d-network
 
