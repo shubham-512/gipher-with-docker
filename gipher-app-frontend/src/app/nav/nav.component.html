@@ -1,0 +1,67 @@
+<!-- <nav class="nav nav-tabs justify-content-sm-end navbar navbar-dark bg-dark">
+    <a routerLink="" class="nav-item nav-link">Home</a>
+    <a routerLink="/search" class="nav-item nav-link">Search</a>
+    <a routerLink="/login" class="nav-item nav-link">Login</a>
+    <a routerLink="/register" class="nav-item nav-link">Register</a>
+</nav> -->
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/entertainment">Entertainment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sports">Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/reaction">Reaction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sticker">Sticker</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <div *ngIf="!userService.loggedIn()">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            </div>
+            <div *ngIf="!userService.loggedIn()">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/register">Register</a>
+            </li>
+          </div>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/wishlist">Wishlist</a>
+            </li>
+            <div *ngIf="userService.loggedIn()">
+              <li class="nav-item">
+                <a class="nav-link" (click)="loggedOut()" style="cursor: pointer;" >Logout</a>
+              </li>
+            </div>
+          </ul> 
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+    

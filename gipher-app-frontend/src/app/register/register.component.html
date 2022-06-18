@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+    <form class="mx-1 mx-md-4" [formGroup]="registrationForm">
+
+      <div *ngIf = "infoMessage !=''" class="alert alert-success">
+        {{infoMessage}}
+      </div>
+      <div *ngIf = "errorMessage !=''" class="alert alert-danger">
+        {{errorMessage}}
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <input type="text"  class="form-control" placeholder="Your Name" formControlName="name"
+            required="" />
+          <div
+            *ngIf="registrationForm.controls['name']?.invalid && (registrationForm.controls['name'].dirty || registrationForm.controls['name']?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="registrationForm.controls['name'].errors?.required">
+              name is required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <input type="email"  class="form-control" placeholder="Your Email" formControlName="email"
+            required="" />
+          <div
+            *ngIf="registrationForm.controls['email']?.invalid && (registrationForm.controls['email'].dirty || registrationForm.controls['email']?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="registrationForm.controls['email'].errors?.required">
+              email is required.
+            </div>
+            <div *ngIf="registrationForm.controls['email'].errors?.email">
+              please give valid email.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <input type="mobile"  class="form-control" placeholder="Your Mobile No."
+            formControlName="mobilenNumber" required="" />
+          <div
+            *ngIf="registrationForm.controls['mobilenNumber']?.invalid && (registrationForm.controls['mobilenNumber'].dirty || registrationForm.controls['mobilenNumber']?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="registrationForm.controls['mobilenNumber'].errors?.required">
+              mobile Number is required.
+            </div>
+            <div *ngIf="registrationForm.controls['mobilenNumber'].errors?.pattern">
+              please give valid mobile number.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <input type="address"  class="form-control" placeholder="Your Address"
+            formControlName="address" required="" />
+          <div
+            *ngIf="registrationForm.controls['address']?.invalid && (registrationForm.controls['address'].dirty || registrationForm.controls['address']?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="registrationForm.controls['address'].errors?.required">
+              address is required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <input type="password"  class="form-control" placeholder="Password"
+            formControlName="password" required="" />
+          <div
+            *ngIf="registrationForm.controls['password']?.invalid && (registrationForm.controls['password'].dirty || registrationForm.controls['password']?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="registrationForm.controls['password'].errors?.required">
+              password is required.
+            </div>
+            <div *ngIf="registrationForm.controls['password'].errors?.minlength">
+              password should be atleast of 6 length
+            </div>
+          </div>
+        </div>
+      </div>
+
+        
+
+        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+          <button type="button" class="btn btn-primary btn-lg" [disabled]="!registrationForm.valid" (click) = "register()">Register</button>
+        </div>
+
+    </form>
+
+  </div>
+</div>

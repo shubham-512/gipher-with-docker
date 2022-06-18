@@ -1,0 +1,14 @@
+
+   <main class="col-12">
+        <app-search></app-search>
+    </main> 
+<div class="container">
+<div class="gifs ">
+    <div class="gif " *ngFor = "let gif of gifs">
+        <img [src]="gif.images.downsized.url" alt="Image">
+        <button type="button" class="btn btn-info" (click)="addToWishlist(gif)">Add</button>
+    </div>
+    
+</div>
+</div>
+

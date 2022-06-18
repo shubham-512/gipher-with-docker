@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
+
+    <form class="mx-1 mx-md-4" [formGroup]="loginForm">
+      <div *ngIf = "errorMessage !=''" class="alert alert-danger">
+        {{errorMessage}}
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <input type="text"  class="form-control" formControlName="email" required="" placeholder="Email Address" />
+          <div *ngIf="loginForm.controls['email']?.invalid && (loginForm.controls['email'].dirty || loginForm.controls['email']?.touched)" class="alert alert-danger">
+            <div *ngIf="loginForm.controls['email'].errors?.required">
+            email is required.
+          </div>
+          <div *ngIf="loginForm.controls['email'].errors?.email">
+            please give valid email.
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <input type="password"  class="form-control" formControlName="password" required="" placeholder="Password" />
+          <div *ngIf="loginForm.controls['password']?.invalid && (loginForm.controls['password'].dirty || loginForm.controls['password']?.touched)" class="alert alert-danger">
+            <div *ngIf="loginForm.controls['password'].errors?.required">
+            password is required.
+          </div>
+          <div *ngIf="loginForm.controls['password'].errors?.minlength">
+            password should be atleast of 6 length
+          </div>
+          </div>
+        </div>
+      </div>
+
+     
+
+      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button type="button" [disabled]="!loginForm.valid" class="btn btn-primary btn-lg" (click) = "login()">Sign in</button>
+      </div>
+      
+      <div class="form-check d-flex justify-content-center mb-5">
+          <label class="form-check-label" for="form2Example3">
+              <p>Not a member? <a routerLink="/register">Register</a></p>
+          </label>
+        </div>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,52 @@
+
+.gifs{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.gif img{
+    max-width: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.gif button{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+@media  screen and (max-width:1200px) {
+    .gifs{
+        display: grid;
+        grid-template-columns: auto auto auto;
+       width: 750px;
+        margin: 0 auto;
+    }
+
+    
+}
+
+@media  screen and (max-width:900px) {
+    .gifs{
+        display: grid;
+        grid-template-columns: auto auto ;
+       width: 500px;
+        margin: 0 auto;
+    }
+
+    
+}
+
+@media  screen and (max-width:600px) {
+    .gifs{
+        display: grid;
+        grid-template-columns: auto ;
+       width: 250px;
+        margin: 0 auto;
+    }
+
+    
+}
+

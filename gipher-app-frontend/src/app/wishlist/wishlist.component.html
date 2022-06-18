@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="row">
+        <div class="col-md-12 cart">
+            <div class="title">
+                <div class="row">
+                    <div class="col"><h4><b>Wishlist</b></h4></div>
+                    <div class="col align-self-center text-right text-muted">{{wishlistLen}} items</div>
+                </div>
+            </div>    
+            <div class = "wishlisht-item" *ngFor="let item of wishlist">
+            <div class="row border-top border-bottom">
+                <div class="row main align-items-center">
+                    <div class="col-2"><img class="img-fluid" [src]="item.imgUrl"></div>
+                    <div class="col">{{item.name}}</div>
+                    <div class="col">{{item.title}}</div>
+                    <div class="col"><button class="btn btn-danger" (click) =deleteWishlistItem(item)>cancel</button></div>
+                </div>
+            </div>
+        </div>
+         
+           
+            <div class="back-to-shop"><a routerLink="">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+        </div>
+       
+    </div>
+    
+</div>

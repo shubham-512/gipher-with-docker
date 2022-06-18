@@ -1,0 +1,103 @@
+version: '3.7'
+services:
+  mysql-server:
+    image: mysql 
+    ports: 
+        - "3308:3306"
+    restart: always
+    environment: 
+       MYSQL_ROOT_PASSWORD : admin123
+       MYSQL_DATABASE : wp_db
+    networks: 
+      - gipher-app-d-network
+
+  mongodb:
+        image: mongo
+        container_name: mongodb
+        ports: 
+            - 27017:27017
+        environment: 
+            - MONGO_INITDB_ROOT_USERNAME=admin
+            - MONGO_INITDB_ROOT_PASSWORD=admin123
+
+  gipher-app-eureka-server:
+    image: gipher-app-eureka-server
+    ports: 
+        - "8761:8761"
+    restart: always
+    depends_on:
+      - mysql-server
+    networks: 
+      - gipher-app-d-network
+  
+  gipher-app-auth-service:
+    image: gipher-app-auth-service
+    ports: 
+        - "8000:8000"
+    restart: always
+    depends_on: 
+      - mysql-server
+      - gipher-app-eureka-server
+    environment:
+       MYSQL_HOST: mysql-server
+       MYSQL_DATABASE : wp_db
+       MYSQL_USER : root
+       MYSQL_PASSWORD : admin123
+       MYSQL_PORT : 3306
+       EUREKA_HOST : gipher-app-eureka-server
+
+    networks: 
+       - gipher-app-d-network
+
+  gipher-app-wishlist-service:
+    image: gipher-app-wishlist-service
+    ports: 
+        - "5001:5001"
+    restart: always
+    depends_on: 
+      - mongodb
+      - gipher-app-eureka-server
+      - gipher-app-auth-service
+    environment: 
+       EUREKA_HOST : gipher-app-eureka-server
+       MONGO_HOST : mongodb
+       MONGO_PORT : 27017
+       MONGO_DATABASE : wp_db
+       MONGO_USER : admin
+       MONGO_PASSWORD : admin123
+    networks: 
+      - gipher-app-d-network
+
+  gipher-app-api-gateway:
+    image: gipher-app-api-gateway
+    ports: 
+        - "8888:8888"
+    restart: always
+    depends_on: 
+      - mysql-server
+      - gipher-app-eureka-server
+      - gipher-app-auth-service
+      - gipher-app-wishlist-service
+      
+    environment: 
+      EUREKA_HOST : gipher-app-eureka-server
+
+    networks: 
+      - gipher-app-d-network
+
+  gipher-app-frontend:
+    image: gipher-app-frontend
+    ports:
+      - "4200:80"
+    restart: always
+    depends_on: # Start the depends_on first
+      - gipher-app-api-gateway 
+    networks:
+      - gipher-app-d-network
+
+
+
+
+# Networks to be created to facilitate communication among containers
+networks: 
+     gipher-app-d-network:

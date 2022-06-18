@@ -1,0 +1,81 @@
+<!-- <p>edit-profile works!</p> -->
+<h3>Enter Your Details</h3>
+<form class="form-group" [formGroup]="updateProfileForm" (ngSubmit) =" updateProfile()">
+    <div *ngIf = "infoMessage !=''" class="alert alert-success">
+        {{infoMessage}}
+      </div>
+      <div *ngIf = "errorMessage !=''" class="alert alert-danger">
+        {{errorMessage}}
+      </div>
+<div>
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email"
+            placeholder="Enter your Email"
+            class="form-control "
+            formControlName="email">
+            <div *ngIf="updateProfileForm.controls['email']?.invalid && (updateProfileForm.controls['email'].dirty || updateProfileForm.controls['email']?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="updateProfileForm.controls['email'].errors?.required">
+              email is required.
+            </div>
+            <div *ngIf="updateProfileForm.controls['email'].errors?.email">
+              please give valid email.
+            </div>
+          </div>
+
+</div>
+<div>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name"
+            placeholder="Enter your Name"
+            class="form-control"
+            formControlName="name">
+            <div
+            *ngIf="updateProfileForm.controls['name']?.invalid && (updateProfileForm.controls['name'].dirty || updateProfileForm.controls['name']?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="updateProfileForm.controls['name'].errors?.required">
+              name is required.
+            </div>
+          </div>
+    
+    
+
+</div>
+
+<div>
+    <label for="mobile">Mobile</label>
+    <input type="text" name="mobile" id="mobile"
+            placeholder="Enter your Mobile No."
+            class="form-control"
+            formControlName="mobilenNumber">
+            <div
+            *ngIf="updateProfileForm.controls['mobilenNumber']?.invalid && (updateProfileForm.controls['mobilenNumber'].dirty || updateProfileForm.controls['mobilenNumber']?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="updateProfileForm.controls['mobilenNumber'].errors?.required">
+              mobile Number is required.
+            </div>
+            <div *ngIf="updateProfileForm.controls['mobilenNumber'].errors?.pattern">
+              please give valid mobile number.
+            </div>
+          </div>
+</div>
+
+<div>
+    <label for="address">Address</label>
+    <input type="text" name="address" id="address"
+            placeholder="Enter Your Address"
+            class="form-control"
+            formControlName="address">
+            <div
+            *ngIf="updateProfileForm.controls['address']?.invalid && (updateProfileForm.controls['address'].dirty || updateProfileForm.controls['address']?.touched)"
+            class="alert alert-danger">
+            <div *ngIf="updateProfileForm.controls['address'].errors?.required">
+              address is required.
+            </div>
+          </div>
+
+</div>
+<div id="addbtn">
+<button type="submit" [disabled]="!updateProfileForm.valid" class="btn btn-primary"  >Update</button>
+</div>
+</form>
