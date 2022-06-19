@@ -19,6 +19,8 @@ services:
         environment: 
             - MONGO_INITDB_ROOT_USERNAME=admin
             - MONGO_INITDB_ROOT_PASSWORD=admin123
+        networks: 
+          - gipher-app-d-network
 
   gipher-app-eureka-server:
     image: gipher-app-eureka-server
