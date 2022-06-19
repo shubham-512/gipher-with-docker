@@ -16,9 +16,6 @@ services:
         container_name: mongodb
         ports: 
             - 27017:27017
-        environment: 
-            - MONGO_INITDB_ROOT_USERNAME=admin
-            - MONGO_INITDB_ROOT_PASSWORD=admin123
         networks: 
           - gipher-app-d-network
 
@@ -65,8 +62,6 @@ services:
        MONGO_HOST : mongodb
        MONGO_PORT : 27017
        MONGO_DATABASE : wp_db
-       MONGO_USER : admin
-       MONGO_PASSWORD : admin123
        MYSQL_HOST: mysql-server
        MYSQL_DATABASE : wp_db
        MYSQL_USER : root
